@@ -316,6 +316,8 @@ class SceneNodes(val scene: EditorScene) :
             }
 
             val modelShape = meshKey.shapes.filterIsInstance<ShapeData.Model>().first()
+            modelShape.toAssetRef() ?: return
+
             val modelRef = requireNotNull(modelShape.toAssetRef())
 
             val gltf = AppAssets.requireModel(modelRef)

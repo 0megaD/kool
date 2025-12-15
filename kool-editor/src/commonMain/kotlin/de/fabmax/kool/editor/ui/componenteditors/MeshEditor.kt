@@ -244,7 +244,7 @@ class MeshEditor : ComponentEditor<MeshComponent>() {
             choices = modelChoices,
             dataGetter = { it.data.shapes[0] as ShapeData.Model },
             valueGetter = { data -> modelOptions.find { data.modelPath == it.item?.path } ?: modelOptions[0] },
-            valueSetter = { _, newValue -> ShapeData.Model(newValue.item?.path ?: "") },
+            valueSetter = { _, newValue -> ShapeData.Model(newValue.item?.path) },
             actionMapper = meshShapeActionMapper,
             label = "Model:"
         )
